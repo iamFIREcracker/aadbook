@@ -23,6 +23,8 @@ class Auth(object):
                                                   api_version=None)
         self.auth_file = auth_file
         self.creds = self._read_creds()
+        if self.creds:
+            self.authenticate()
 
     def _read_creds(self):
         try:
@@ -59,7 +61,3 @@ class Auth(object):
     def _save_creds(self, data):
         with open(self.auth_file, 'w') as f:
             json.dump(data, f)
-
-
-if __name__ == '__main__':
-    print Auth('~/.aadbook_auth.json').authenticate()

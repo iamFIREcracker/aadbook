@@ -102,6 +102,9 @@ class Contacts(object):
         return [users, next]
 
     def query(self, query):
+        if not self.cache.contacts:
+            self.reload()
+
         matching_contacts = sorted(self.__query_contacts(query),
                                    key=lambda c: c.name)
         # mutt's query_command expects the first line to be a message,
