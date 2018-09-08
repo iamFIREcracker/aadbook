@@ -96,6 +96,9 @@ class Contacts(object):
         def parse_contact(account):
             return Contact(account['displayName'], account['mail'])
 
+        if 'value' not in response:
+            raise ContactsParseError("Failed to parse contacts\n%s" % response)
+
         users = map(parse_contact, response['value'])
         next = (response['@odata.nextLink']
                 if '@odata.nextLink' in response else None)
@@ -123,3 +126,6 @@ class Contacts(object):
                 if any(itertools.imap(match,
                                       [contact.name, contact.mail])):
                     yield contact
+
+class ContactsParseError(StandardError):
+    pass
