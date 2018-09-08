@@ -18,6 +18,7 @@ log = logging.getLogger(__name__)
 Contact = namedtuple('Contact', 'name mail'.split())
 
 CACHE_FORMAT_VERSION = '1.0'
+MAX_USERS_PER_PAGE = 999
 
 
 class Cache(object):
@@ -78,13 +79,18 @@ class Contacts(object):
         session.headers.update({
             'Authorization': "Bearer " + self._auth.creds['accessToken']
         })
-        response = session.get('https://graph.microsoft.com/v1.0/users').json()
+        response = session.get(self._users_url).json()
         [users, next] = self._parse_users_response(response)
         yield users
         while next:
             response = session.get(next).json()
             [users, next] = self._parse_users_response(response)
             yield users
+
+    @property
+    def _users_url(self):
+        return ('https://graph.microsoft.com/v1.0/users?$top=%s'
+                % MAX_USERS_PER_PAGE)
 
     def _parse_users_response(self, response):
         def parse_contact(account):
