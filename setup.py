@@ -19,20 +19,20 @@ INSTALL_REQUIRES = [
     'requests==2.19.1'
 ]
 
-URL = 'https://bitbucket.org/iamFIREcracker/aadbook'
+URL = 'https://github.com/iamFIREcracker/aadbook'
 DOWNLOAD_URL = 'http://pypi.python.org/pypi/aadbook'
 
-CLASSIFIERS = [f.strip() for f in """
-               Development Status :: 4 - Beta
-               Environment :: Console
-               Intended Audience :: End Users/Desktop
-               Operating System :: OS Independent
-               Programming Language :: Python
-               Programming Language :: Python :: 2.7
-               Programming Language :: Python :: 3.2
-               License :: OSI Approved :: GNU General Public License (GPL)
-               Topic :: Communications :: Email :: Address Book
-               """.splitlines() if f.strip()],
+CLASSIFIERS = [
+    'Development Status :: 4 - Beta',
+    'Environment :: Console',
+    'Intended Audience :: End Users/Desktop',
+    'Operating System :: OS Independent',
+    'Programming Language :: Python',
+    'Programming Language :: Python :: 2.7',
+    'Programming Language :: Python :: 3.2',
+    'License :: OSI Approved :: GNU General Public License (GPL)',
+    'Topic :: Communications :: Email :: Address Book',
+]
 AUTHOR = 'Matteo Landi'
 AUTHOR_EMAIL = 'matteo@matteolandi.net'
 KEYWORDS = "contacts azure active directory ad".split(' ')
