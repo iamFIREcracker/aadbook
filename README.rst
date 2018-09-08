@@ -100,8 +100,9 @@ and::
 
     aadbook COMMAND -h
 
-Links, Feedback and getting involved
-====================================
+Changelog
+=========
 
-- PyPI home: http://pypi.python.org/pypi/aadbook
-- Code Repository: http://github.com/iamFIREcracker/aadbook
+0.0.1 (2018-09-08):
+
+- Project inception
