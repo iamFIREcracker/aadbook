@@ -4,10 +4,21 @@ import os
 from setuptools import find_packages
 from setuptools import setup
 
-from aadbook import __version__
+
+def get_version():
+    import subprocess
+    from aadbook import __version__ as reference_tag
+
+    proc = subprocess.Popen('git rev-list %s..HEAD --count' % (reference_tag,),
+                            shell=True,
+                            stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    pending, _ = proc.communicate()
+    if not pending:
+        return reference_tag
+    return "%s-r%s" % (reference_tag, pending)
 
 
-VERSION = __version__
+VERSION = get_version()
 NAME = 'aadbook'
 PACKAGES = [NAME]
 DESCRIPTION = 'AADBook -- Access your Azure AD contacts from the command line'
