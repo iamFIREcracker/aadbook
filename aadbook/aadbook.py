@@ -23,11 +23,8 @@ def do_config_template(config, args):
 def do_authenticate(config, args):
     auth = config.auth
 
-    if auth.invalid:
-        auth.authenticate(ignore_refresh_token=True)
-        print('Authentication succeeded')
-    else:
-        print('You are already authenticated.')
+    auth.authenticate(ignore_refresh_token=True)
+    print('Authentication succeeded')
 
 
 def do_reload(config, args):
