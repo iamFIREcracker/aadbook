@@ -103,6 +103,12 @@ and::
 Changelog
 =========
 
+0.0.2 (2018-09-16):
+
+- The `authenticate` command now always initiates a full authentication
+  workflow (ignoring any cached tokens)
+- Start up time improvements (the internal token is refreshed only if expired)
+
 0.0.1 (2018-09-08):
 
 - Project inception
