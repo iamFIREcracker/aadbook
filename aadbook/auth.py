@@ -42,8 +42,8 @@ class Auth(object):
         expires_on = parse(self.creds['expiresOn'])
         return expires_on < datetime.now()
 
-    def authenticate(self):
-        if self.creds:
+    def authenticate(self, ignore_refresh_token=False):
+        if not ignore_refresh_token and self.creds:
             refresh_token = self.creds['refreshToken']
             token = self.context.acquire_token_with_refresh_token(
                 refresh_token,
