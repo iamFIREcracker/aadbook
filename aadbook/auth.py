@@ -23,7 +23,7 @@ class Auth(object):
                                                   api_version=None)
         self.auth_file = auth_file
         self.creds = self._read_creds()
-        if self.creds:
+        if self.creds and self.invalid:
             self.authenticate()
 
     def _read_creds(self):
