@@ -25,6 +25,7 @@ class Auth(object):
         self.creds = self._read_creds()
         if self.creds and self.invalid:
             self.authenticate()
+            self.creds = self._read_creds()
 
     def _read_creds(self):
         try:
