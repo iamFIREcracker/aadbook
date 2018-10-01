@@ -103,6 +103,12 @@ and::
 Changelog
 =========
 
+0.0.3 (2018-10-01):
+
+- Fix a bug where internal credentials were not properly updated after
+  tokens were updated using the refreshToken -- throwing an error on the first
+  `aadbook query ...` invocation
+
 0.0.2 (2018-09-16):
 
 - The `authenticate` command now always initiates a full authentication
