@@ -105,8 +105,8 @@ Changelog
 
 0.1.0 (2018-10-09)
 
-- Implement automatic fuzzy finding by replacing each ` ` in the search query
-  string with `.*`
+- Implement automatic fuzzy finding by replacing each `` `` in the search query
+  string with ``.*``
 
 0.0.3 (2018-10-01):
 
