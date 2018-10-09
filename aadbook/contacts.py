@@ -127,5 +127,6 @@ class Contacts(object):
                                       [contact.name, contact.mail])):
                     yield contact
 
+
 class ContactsParseError(StandardError):
     pass
