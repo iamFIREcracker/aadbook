@@ -120,7 +120,7 @@ class Contacts(object):
                                                     errors='replace')
 
     def __query_contacts(self, query):
-        match = re.compile(query, re.I).search  # create a match function
+        match = re.compile(query.replace(' ', '.*'), re.I).search
         for contact in self.cache.contacts:
             if contact.mail:
                 if any(itertools.imap(match,
