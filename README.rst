@@ -103,6 +103,12 @@ and::
 Changelog
 =========
 
+0.1.1 (2018-10-21)
+
+- Fixed a bug where an exception thrown at startup when automatically
+  refreshing auth tokens could make the ``authenticate`` command fail, leaving
+  the user with no option other than wiping out ``aadbook`` caches
+
 0.1.0 (2018-10-09)
 
 - Implement automatic fuzzy finding by replacing each `` `` in the search query

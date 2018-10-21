@@ -24,8 +24,12 @@ class Auth(object):
         self.auth_file = auth_file
         self.creds = self._read_creds()
         if self.creds and self.invalid:
-            self.authenticate()
-            self.creds = self._read_creds()
+            try:
+                self.authenticate()
+                self.creds = self._read_creds()
+            except adal.adal_error.AdalError as err:
+                log.error("Failed to refresh tokens: %s", unicode(err))
+                self.creds = None
 
     def _read_creds(self):
         try:
