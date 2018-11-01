@@ -27,7 +27,7 @@ readme = os.path.join(os.path.dirname(__file__), 'README.rst')
 LONG_DESCRIPTION = open(readme).read()
 INSTALL_REQUIRES = [
     'adal==1.0.2',
-    'requests==2.19.1'
+    'requests==2.20.0'
 ]
 
 URL = 'https://github.com/iamFIREcracker/aadbook'
