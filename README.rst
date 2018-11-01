@@ -103,6 +103,10 @@ and::
 Changelog
 =========
 
+0.1.2 (2018-11-01)
+
+- Switch to ``requests==2.20.0``
+
 0.1.1 (2018-10-21)
 
 - Fixed a bug where an exception thrown at startup when automatically
