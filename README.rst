@@ -103,6 +103,10 @@ and::
 Changelog
 =========
 
+0.1.3 (2019-05-01)
+
+- Update dependencies
+
 0.1.2 (2018-11-01)
 
 - Switch to ``requests==2.20.0``
