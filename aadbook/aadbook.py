@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from __future__ import print_function
-from __future__ import absolute_import
 import argparse
 import pkg_resources
 import logging
@@ -78,7 +76,7 @@ def _build_parser():
 def _main():
     parser = _build_parser()
 
-    args = [arg.decode(aadbook.config.ENCODING) for arg in sys.argv[1:]]
+    args = sys.argv[1:]
     args = parser.parse_args(args)
 
     logging.basicConfig(level=args.log_level)

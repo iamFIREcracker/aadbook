@@ -28,7 +28,7 @@ class Auth(object):
                 self.authenticate()
                 self.creds = self._read_creds()
             except adal.adal_error.AdalError as err:
-                log.error("Failed to refresh tokens: %s", unicode(err))
+                log.error("Failed to refresh tokens: %s", str(err))
                 self.creds = None
 
     def _read_creds(self):

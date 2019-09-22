@@ -34,13 +34,12 @@ URL = 'https://github.com/iamFIREcracker/aadbook'
 DOWNLOAD_URL = 'http://pypi.python.org/pypi/aadbook'
 
 CLASSIFIERS = [
-    'Development Status :: 4 - Beta',
+    'Development Status :: 5 - Production/Stable',
     'Environment :: Console',
     'Intended Audience :: End Users/Desktop',
     'Operating System :: OS Independent',
     'Programming Language :: Python',
-    'Programming Language :: Python :: 2.7',
-    'Programming Language :: Python :: 3.2',
+    'Programming Language :: Python :: 3 :: Only',
     'License :: OSI Approved :: GNU General Public License (GPL)',
     'Topic :: Communications :: Email :: Address Book',
 ]

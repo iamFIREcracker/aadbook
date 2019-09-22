@@ -103,28 +103,32 @@ and::
 Changelog
 =========
 
+0.2.0 (2019-09-22)
+
+- Adds Python3 support (and removes support for Python2)
+
 0.1.3 (2019-05-01)
 
-- Update dependencies
+- Updates dependencies
 
 0.1.2 (2018-11-01)
 
-- Switch to ``requests==2.20.0``
+- Switches to ``requests==2.20.0``
 
 0.1.1 (2018-10-21)
 
-- Fixed a bug where an exception thrown at startup when automatically
+- Fixes a bug where an exception thrown at startup when automatically
   refreshing auth tokens could make the ``authenticate`` command fail, leaving
   the user with no option other than wiping out ``aadbook`` caches
 
 0.1.0 (2018-10-09)
 
-- Implement automatic fuzzy finding by replacing each `` `` in the search query
+- Implements automatic fuzzy finding by replacing each `` `` in the search query
   string with ``.*``
 
 0.0.3 (2018-10-01):
 
-- Fix a bug where internal credentials were not properly updated after
+- Fixes a bug where internal credentials were not properly updated after
   tokens were updated using the refreshToken -- throwing an error on the first
   `aadbook query ...` invocation
 

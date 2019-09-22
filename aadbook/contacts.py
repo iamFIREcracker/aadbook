@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import itertools
 import logging
 import os
 import time
@@ -39,7 +38,7 @@ class Cache(object):
                 if cache.get('aadbook_cache') != CACHE_FORMAT_VERSION:
                     log.info('Detected old cache format')
                     cache = None  # Old cache format
-            except StandardError, err:
+            except Exception as err:
                 log.info('Failed to read the cache file: %s', err)
                 raise
         if cache:
@@ -112,21 +111,19 @@ class Contacts(object):
                                    key=lambda c: c.name)
         # mutt's query_command expects the first line to be a message,
         # which it discards.
-        print "\n",
+        print('')
         for contact in matching_contacts:
             name = contact.name
             mail = contact.mail
-            print (u'\t'.join((mail, name))).encode(self._config.encoding,
-                                                    errors='replace')
+            print (u'\t'.join((mail, name)))
 
     def __query_contacts(self, query):
         match = re.compile(query.replace(' ', '.*'), re.I).search
         for contact in self.cache.contacts:
             if contact.mail:
-                if any(itertools.imap(match,
-                                      [contact.name, contact.mail])):
+                if any(map(match, [contact.name, contact.mail])):
                     yield contact
 
 
-class ContactsParseError(StandardError):
+class ContactsParseError(Exception):
     pass
