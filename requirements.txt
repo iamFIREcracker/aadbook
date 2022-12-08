@@ -1,7 +1,7 @@
 -e git+git@github.com:iamFIREcracker/aadbook.git@d191e9d36a2309449ab91c1728eaf5901b7ef91c#egg=aadbook&subdirectory=../../../opt/aadbook
 adal==1.0.2
 asn1crypto==0.24.0
-certifi==2019.3.9
+certifi==2022.12.7
 cffi==1.12.3
 chardet==3.0.4
 cryptography==2.6.1
